@@ -1,5 +1,53 @@
 ﻿# Monorepo
 
+🌐 **Language / Język:** [English](#english) | [Polski](#polski)
+
+---
+
+<a id="english"></a>
+
+## Required Tools and Environment Setup (Onboarding)
+
+To run the project locally, install the following tools:
+
+1. **Git** – download and install from [git-scm.com](https://git-scm.com/) (keep default settings during Windows installation).
+2. **Docker Desktop (with Docker Compose)** – download from [docker.com](https://www.docker.com/products/docker-desktop/).
+   - _Note for Windows:_ Run the installer as an administrator and select **All-users installation** with **WSL 2** enabled. If the system prompts you to install WSL, open PowerShell as an administrator, run `wsl --install`, and restart your computer.
+
+### Installation Verification
+
+Open your terminal (PowerShell or CMD) and verify that both commands return version numbers without errors:
+
+```bash
+git --version
+docker compose version
+```
+
+### Running the Project
+
+1. Clone the repository to your machine:
+   ```bash
+   git clone [https://github.com/Szammam/my-monorepo.git](https://github.com/Szammam/my-monorepo.git)
+   ```
+2. Navigate to the project folder and start the environment:
+   ```bash
+   cd my-monorepo
+   docker compose up -d
+   ```
+
+### Stopping the Project
+
+To stop and remove the running containers, execute the following command inside the project folder:
+
+```bash
+docker compose down
+```
+
+---
+
+<a id="polski"></a>
+🌐 [Back to English](#english)
+
 ## Wymagane narzędzia i konfiguracja środowiska (Onboarding)
 
 Aby uruchomić projekt lokalnie, zainstaluj poniższe narzędzia:
@@ -21,14 +69,18 @@ docker compose version
 
 1. Sklonuj repozytorium na swój komputer:
    ```bash
-   git clone https://github.com/Szammam/my-monorepo.git
+   git clone [https://github.com/Szammam/my-monorepo.git](https://github.com/Szammam/my-monorepo.git)
    ```
-2. Wejdź do folderu projektu i uruchom środowisko (gdy pojawi się plik `docker-compose.yml`):
+2. Wejdź do folderu projektu i uruchom środowisko:
    ```bash
+   cd my-monorepo
    docker compose up -d
    ```
-   ### Zamknięcie projektu
-3. Wejdź do folderu projektu i uruchom środowisko (gdy pojawi się plik `docker-compose.yml`):
-   ```bash
-   docker compose down
-   ```
+
+### Zamknięcie projektu
+
+Aby zatrzymać i usunąć działające kontenery, wykonaj w folderze projektu poniższą komendę:
+
+```bash
+docker compose down
+```
