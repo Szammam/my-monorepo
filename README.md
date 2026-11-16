@@ -21,7 +21,7 @@ docker compose version
 
 1. Sklonuj repozytorium na swój komputer:
    ```bash
-   git clone <TUTAJ_WKLEJ_LINK_DO_REPOZYTORIUM>
+   git clone https://github.com/Szammam/my-monorepo.git
    ```
 2. Wejdź do folderu projektu i uruchom środowisko (gdy pojawi się plik `docker-compose.yml`):
    ```bash
