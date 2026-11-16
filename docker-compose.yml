@@ -1,0 +1,11 @@
+services:
+  # Przykładowa lokalna baza danych na start projektu
+  db:
+    image: postgres:16-alpine
+    container_name: project-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app_db
+    ports:
+      - "5432:5432"
