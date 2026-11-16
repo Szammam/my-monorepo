@@ -29,9 +29,13 @@ docker compose version
    ```bash
    git clone [https://github.com/Szammam/my-monorepo.git](https://github.com/Szammam/my-monorepo.git)
    ```
-2. Navigate to the project folder and start the environment:
+2. Navigate to the project folder and create your local environment variables file from the template (optional, default values work out of the box):
    ```bash
    cd my-monorepo
+   cp .env.example .env
+   ```
+3. Start the environment (local database):
+   ```bash
    docker compose up -d
    ```
 
@@ -54,7 +58,7 @@ Aby uruchomić projekt lokalnie, zainstaluj poniższe narzędzia:
 
 1. **Git** – pobierz i zainstaluj ze strony [git-scm.com](https://git-scm.com/) (podczas instalacji na Windowsie zostaw domyślne ustawienia).
 2. **Docker Desktop (z Docker Compose)** – pobierz ze strony [docker.com](https://www.docker.com/products/docker-desktop/).
-   - _Uwaga dla Windows:_ Uruchom instalator jako administrator i wybierz opcję **All-users installation** z włączonym **WSL 2**. Jeśli system poprosi o doinstalowanie WSL, otwórz PowerShell jako administrator, wpisz `wsl --install` i zrestartuj komputer.
+   - _Uwaga dla Windows:_ Uruchom instalator jako administrator i wybierz opcję **All-users installation** z włączonym **WSL 2**. Jeśli system poprosi o doinstalowanie WSL, otwórz PowerShell jako administrator, wpisz `wsl --install`, i zrestartuj komputer.
 
 ### Weryfikacja instalacji
 
@@ -71,9 +75,13 @@ docker compose version
    ```bash
    git clone [https://github.com/Szammam/my-monorepo.git](https://github.com/Szammam/my-monorepo.git)
    ```
-2. Wejdź do folderu projektu i uruchom środowisko:
+2. Wejdź do folderu projektu i utwórz lokalny plik ze zmiennymi środowiskowymi na podstawie szablonu (opcjonalnie, wartości domyślne działają od razu):
    ```bash
    cd my-monorepo
+   cp .env.example .env
+   ```
+3. Uruchom środowisko (lokalną bazę danych):
+   ```bash
    docker compose up -d
    ```
 
