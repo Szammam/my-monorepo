@@ -1,4 +1,4 @@
-﻿# Nazwa Projektu
+﻿# Monorepo
 
 ## Wymagane narzędzia i konfiguracja środowiska (Onboarding)
 
