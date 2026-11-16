@@ -27,3 +27,8 @@ docker compose version
    ```bash
    docker compose up -d
    ```
+   ### Zamknięcie projektu
+3. Wejdź do folderu projektu i uruchom środowisko (gdy pojawi się plik `docker-compose.yml`):
+   ```bash
+   docker compose down
+   ```
