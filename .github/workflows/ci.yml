@@ -1,0 +1,45 @@
+name: CI Build and Test
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies (if package.json exists)
+        run: |
+          if [ -f "package.json" ]; then
+            npm ci || npm install
+          else
+            echo "No root package.json yet - skipping install"
+          fi
+
+      - name: Build project
+        run: |
+          if [ -f "package.json" ] && npm run | grep -q "build"; then
+            npm run build
+          else
+            echo "Build check passed (no build script defined yet)"
+          fi
+
+      - name: Run tests
+        run: |
+          if [ -f "package.json" ] && npm run | grep -q "test"; then
+            npm test
+          else
+            echo "Test check passed (no test script defined yet)"
+          fi
