@@ -92,3 +92,4 @@ Aby zatrzymać i usunąć działające kontenery, wykonaj w folderze projektu po
 ```bash
 docker compose down
 ```
+
