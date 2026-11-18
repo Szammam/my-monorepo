@@ -27,17 +27,25 @@ docker compose version
 
 1. Clone the repository to your machine:
    ```bash
-   git clone [https://github.com/Szammam/my-monorepo.git](https://github.com/Szammam/my-monorepo.git)
+   git clone https://github.com/Szammam/my-monorepo.git
    ```
 2. Navigate to the project folder and create your local environment variables file from the template (optional, default values work out of the box):
    ```bash
    cd my-monorepo
    cp .env.example .env
    ```
-3. Start the environment (local database):
+3. Start the entire project environment (database, backend, and frontend) with a single command:
+
    ```bash
-   docker compose up -d
+   docker compose up --build
    ```
+
+   _(Add `-d` flag if you want to run containers in the background: `docker compose up --build -d`)_
+
+4. Verify that all services are running:
+   - **Frontend (Vite + React):** http://localhost:5173
+   - **Backend (Spring Boot API):** http://localhost:8080
+   - **Database (PostgreSQL):** `localhost:5432`
 
 ### Stopping the Project
 
@@ -73,17 +81,25 @@ docker compose version
 
 1. Sklonuj repozytorium na swój komputer:
    ```bash
-   git clone [https://github.com/Szammam/my-monorepo.git](https://github.com/Szammam/my-monorepo.git)
+   git clone https://github.com/Szammam/my-monorepo.git
    ```
 2. Wejdź do folderu projektu i utwórz lokalny plik ze zmiennymi środowiskowymi na podstawie szablonu (opcjonalnie, wartości domyślne działają od razu):
    ```bash
    cd my-monorepo
    cp .env.example .env
    ```
-3. Uruchom środowisko (lokalną bazę danych):
+3. Uruchom całe środowisko projektu (bazę danych, backend oraz frontend) jednym poleceniem:
+
    ```bash
-   docker compose up -d
+   docker compose up --build
    ```
+
+   _(Dodaj flagę `-d`, jeśli chcesz uruchomić kontenery w tle: `docker compose up --build -d`)_
+
+4. Sprawdź, czy wszystkie serwisy działają poprawnie:
+   - **Frontend (Vite + React):** http://localhost:5173
+   - **Backend (Spring Boot API):** http://localhost:8080
+   - **Baza danych (PostgreSQL):** `localhost:5432`
 
 ### Zamknięcie projektu
 
