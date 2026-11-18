@@ -11,6 +11,43 @@ services:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-admin} -d ${POSTGRES_DB:-app_db}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    image: eclipse-temurin:21-jre-alpine
+    container_name: project-backend
+    working_dir: /app
+    command: sh -c "echo 'Spring Boot backend placeholder running on port 8080' && tail -f /dev/null"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB:-app_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-admin}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      SERVER_PORT: 8080
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    image: node:22-alpine
+    container_name: project-frontend
+    working_dir: /app
+    command: sh -c "echo 'Vite + React frontend placeholder running on port 5173' && node -e \"require('http').createServer((req, res) => res.end('Frontend placeholder OK')).listen(5173)\""
+    environment:
+      VITE_API_URL: http://localhost:${BACKEND_PORT:-8080}
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    depends_on:
+      - backend
 
 volumes:
   postgres_data:
