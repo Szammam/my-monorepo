@@ -8,11 +8,14 @@ export function AppHeader() {
   return (
     <header className="app-header">
       <div className="app-header__inner">
-        <Link to="/" className="app-header__brand">
-          Szammam
-        </Link>
+        <div className="app-header__brand-group">
+          <Link to="/" className="app-header__brand">
+            Szammam
+          </Link>
+          <span className="app-header__tagline">Good food, better mood</span>
+        </div>
 
-        <nav aria-label="Primary desktop navigation" className="app-header__nav">
+        <nav aria-label="Główna nawigacja" className="app-header__nav">
           {mainLinks.map((item) => (
             <NavLink
               key={item.to}
@@ -34,7 +37,7 @@ export function AppHeader() {
               `app-header__auth-btn ${isActive ? 'app-header__auth-btn--active' : ''}`
             }
           >
-            Log in
+            Zaloguj się
           </NavLink>
         </div>
       </div>

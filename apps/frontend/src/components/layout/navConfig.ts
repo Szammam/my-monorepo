@@ -5,10 +5,10 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { to: '/', label: 'Home', showInMobileBar: true },
-  { to: '/vendors', label: 'Vendors', showInMobileBar: true },
-  { to: '/cart', label: 'Cart', showInMobileBar: true },
-  { to: '/orders', label: 'Orders', showInMobileBar: true },
-  { to: '/profile', label: 'Profile', showInMobileBar: true },
-  { to: '/login', label: 'Login', showInMobileBar: false },
+  { to: '/', label: 'Start', showInMobileBar: true },
+  { to: '/vendors', label: 'Sprzedawcy', showInMobileBar: true },
+  { to: '/cart', label: 'Koszyk', showInMobileBar: true },
+  { to: '/orders', label: 'Zamówienia', showInMobileBar: true },
+  { to: '/profile', label: 'Profil', showInMobileBar: true },
+  { to: '/login', label: 'Zaloguj się', showInMobileBar: false },
 ];
