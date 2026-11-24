@@ -1,100 +1,138 @@
 /* ==========================================================================
-   Szammam Design System Tokens
-   Color Ratio: 60% Green (Dominant) / 30% Beige (Secondary) / 10% Purple (Accent)
+   szAmmAm Design System Tokens (UI/UX Specification v1)
+   Dual Theme: Warm Cream Light (#F7F5EE) + Forest / Midnight Dark (#244C3A / #081B24)
    ========================================================================== */
 
 :root {
   /* ------------------------------------------------------------------------
-     1. Core Brand Palette
+     1. Paleta bazowa i akcenty semantyczne
      ------------------------------------------------------------------------ */
-  /* 60% Dominant: Green */
-  --palette-green-50: #f2f7f3;
-  --palette-green-100: #e1ede4;
-  --palette-green-200: #c3dcc9;
-  --palette-green-600: #2f6f44;
-  --palette-green-700: #245735;
-  --palette-green-900: #132e1c;
+  --color-bg-light: #f7f5ee;
+  --color-bg-dark: #081b24;
+  --color-nav-forest: #244c3a;
+  --color-nav-forest-border: rgba(255, 255, 255, 0.24);
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #0e2631;
+  --color-surface-tint: #fbf8f3;
+  --color-surface-cream-pill: #f4efe4;
+  --color-surface-role-active: #fff5f2;
 
-  /* 30% Secondary: Warm Beige */
-  --palette-beige-50: #fbf8f3;
-  --palette-beige-100: #f5efe6;
-  --palette-beige-200: #e6dccb;
-  --palette-beige-300: #d5c7b2;
-  --palette-beige-800: #4a4238;
+  /* Pigułki nawigacji na pasku górnym (zgodnie z podglądem) */
+  --color-pill-about-bg: rgba(88, 148, 120, 0.42);
+  --color-pill-how-bg: rgba(164, 198, 78, 0.52);
+  --color-pill-vendor-bg: rgba(176, 92, 128, 0.56);
+  --color-pill-contact-bg: rgba(196, 168, 104, 0.48);
+  --color-pill-register-bg: rgba(30, 68, 50, 0.65);
 
-  /* 10% Accent: Purple */
-  --palette-purple-100: #f1eafa;
-  --palette-purple-500: #7c3aed;
-  --palette-purple-600: #6d28d9;
-  --palette-purple-700: #5b21b6;
+  /* Akcenty */
+  --color-cta-lime: #d4ff33;
+  --color-cta-lime-hover: #c5f21d;
+  --color-cta-lime-active: #b3df0e;
+  --color-hero-lime: #d8f86b;
+
+  --color-coral: #ff5733;
+  --color-coral-hover: #e64624;
+  --color-coral-active: #c93818;
+
+  --color-turquoise: #2ec4b6;
+  --color-turquoise-hover: #24a89b;
+
+  --color-sky-blue: #bfdbfe;
+  --color-promo-gradient: linear-gradient(135deg, #ff6b35 0%, #d62872 52%, #8338ec 100%);
+  --color-backdrop-overlay: rgba(0, 0, 0, 0.55);
+
+  /* Teksty */
+  --color-text-ink: #081b24;
+  --color-text-muted: #64748b;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-lime: #081b24;
+  --color-text-on-coral: #ffffff;
+
+  /* Obramowania */
+  --color-border-light: #e2e8f0;
+  --color-border-dark: #1e3a47;
+  --color-border-empty: #cbd5e1;
+  --color-border-dark-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Tokeny semantyczne UI */
+  --color-bg: var(--color-bg-light);
+  --color-surface: var(--color-surface-light);
+  --color-surface-elevated: var(--color-surface-light);
+  --color-border: var(--color-border-light);
+  --color-border-strong: var(--color-border-empty);
+
+  --color-text-primary: var(--color-text-ink);
+  --color-text-secondary: var(--color-text-muted);
+  --color-text-on-brand: var(--color-text-on-dark);
+  --color-text-on-accent: var(--color-text-on-coral);
+
+  --color-brand: var(--color-nav-forest);
+  --color-brand-hover: var(--color-surface-dark);
+  --color-accent: var(--color-coral);
+  --color-accent-hover: var(--color-coral-hover);
+  --color-accent-active: var(--color-coral-active);
+  --color-accent-subtle: var(--color-surface-role-active);
 
   /* ------------------------------------------------------------------------
-     2. Semantic UI Tokens (Used by Components & Layouts)
-     ------------------------------------------------------------------------ */
-  /* Surfaces (60% Green canvas + 30% Beige containers) */
-  --color-bg: var(--palette-green-50);
-  --color-surface: var(--palette-beige-100);
-  --color-surface-elevated: var(--palette-beige-50);
-  --color-surface-tint: var(--palette-green-100);
-
-  /* Borders */
-  --color-border: var(--palette-beige-200);
-  --color-border-strong: var(--palette-beige-300);
-
-  /* Typography Colors */
-  --color-text-primary: var(--palette-green-900);
-  --color-text-secondary: var(--palette-beige-800);
-  --color-text-on-brand: #ffffff;
-  --color-text-on-accent: #ffffff;
-
-  /* Brand & 10% Accent Actions */
-  --color-brand: var(--palette-green-600);
-  --color-brand-hover: var(--palette-green-700);
-  --color-accent: var(--palette-purple-600);
-  --color-accent-hover: var(--palette-purple-700);
-  --color-accent-subtle: var(--palette-purple-100);
-
-  /* ------------------------------------------------------------------------
-     3. Typography Tokens
+     2. Typografia
      ------------------------------------------------------------------------ */
   --font-family-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
   --font-family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
-  /* Font Sizes */
+  --font-size-2xs: 0.6875rem; /* 11px */
   --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */
-  --font-size-base: 1rem; /* 16px */
+  --font-size-base: 0.9375rem; /* 15px */
   --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.25rem; /* 20px */
-  --font-size-2xl: 1.5rem; /* 24px */
-  --font-size-3xl: 1.75rem; /* 28px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 2rem; /* 32px */
+  --font-size-3xl: 2.625rem; /* 42px */
+  --font-size-hero: 3.5rem; /* 56px */
+  --font-size-hero-xl: 4.5rem; /* 72px */
 
-  /* Font Weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 
-  /* Line Heights */
+  --line-height-hero: 1.04;
+  --line-height-heading: 1.1;
   --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
+  --line-height-snug: 1.4;
+  --line-height-normal: 1.55;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-eyebrow: 0.12em;
 
   /* ------------------------------------------------------------------------
-     4. Layout, Spacing & Radii Tokens
+     3. Siatka, odstępy i promienie zaokrągleń
      ------------------------------------------------------------------------ */
-  --header-height: 64px;
+  --header-height: 76px;
   --mobile-nav-height: 60px;
-  --container-max-width: 1120px;
+  --container-max-width: 1240px;
+  --grid-gutter: 1.25rem; /* 20px */
 
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
 
+  --radius-input: 12px;
+  --radius-cta-modal: 14px;
+  --radius-card: 18px;
+  --radius-surface-lg: 24px;
+  --radius-banner: 28px;
+  --radius-pill: 9999px;
+
+  /* Zachowane aliasy dla kompatybilności istniejących plików */
   --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-full: 9999px;
+  --radius-md: var(--radius-input);
+  --radius-lg: var(--radius-card);
+  --radius-full: var(--radius-pill);
 }

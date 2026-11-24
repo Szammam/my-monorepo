@@ -6,40 +6,48 @@
 
 .ui-field__label {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
-  color: var(--color-text-primary);
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
 }
 
 .ui-field__required {
   margin-left: var(--space-1);
-  color: var(--color-accent);
+  color: var(--color-coral);
 }
 
 .ui-field__input {
   width: 100%;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border-strong);
-  background-color: var(--color-surface-elevated);
+  min-height: 44px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-input);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
   color: var(--color-text-primary);
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-normal);
   transition:
     border-color 0.15s ease,
     background-color 0.15s ease;
 }
 
+.ui-field__input::placeholder {
+  color: var(--color-text-secondary);
+}
+
 .ui-field__input:hover:not(:disabled) {
-  border-color: var(--color-brand);
+  border-color: var(--color-text-ink);
 }
 
 .ui-field__input:focus {
   outline: none;
-  border-color: var(--color-accent);
-  background-color: var(--color-surface);
+  border-color: var(--color-coral);
+  background-color: var(--color-surface-elevated);
 }
 
 .ui-field__input:disabled {
@@ -51,8 +59,8 @@
 
 .ui-field__input--error,
 .ui-field__input[aria-invalid='true'] {
-  border-color: var(--palette-purple-700);
-  background-color: var(--color-accent-subtle);
+  border-color: var(--color-coral);
+  background-color: var(--color-surface-role-active);
 }
 
 .ui-field__error {
@@ -60,6 +68,6 @@
   font-family: var(--font-family-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  color: var(--palette-purple-700);
+  line-height: var(--line-height-snug);
+  color: var(--color-coral-active);
 }

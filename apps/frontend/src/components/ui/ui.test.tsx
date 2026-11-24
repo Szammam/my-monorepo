@@ -26,7 +26,7 @@ describe('UI primitives', () => {
           type="email"
           value={val}
           onChange={(e) => setVal(e.target.value)}
-          error="Podaj poprawny adres e-mail."
+          error="Wypełnij to pole."
           required
         />
       );
@@ -35,7 +35,7 @@ describe('UI primitives', () => {
     render(<Wrapper />);
 
     const input = screen.getByLabelText(/Adres e-mail/i);
-    const errorMessage = screen.getByText('Podaj poprawny adres e-mail.');
+    const errorMessage = screen.getByText('Wypełnij to pole.');
 
     expect(errorMessage).toBeInTheDocument();
     expect(input).toHaveAttribute('aria-invalid', 'true');
